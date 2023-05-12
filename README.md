@@ -5,8 +5,8 @@ algorithms to solve the classic 9x9 Sudoku.
 ## Directory Structure
 - `algorithms`
     - `bt.py`: Implementation of a simple backtracking algorithm
-    - `csp.py`: Implementation of a backtracking algorithm to solve a 9x9 sudoku when modelled as a constraint satisfaction problem (CSP)
-    - `dlx.py`: Implementation of Donald Knuth's Algorithm X to solve a 9x9 sudoku when modelled as an exact cover problem
+    - `csp.py`: Implementation of a backtracking algorithm to solve the Sudoku when modelled as a constraint satisfaction problem (CSP)
+    - `dlx.py`: Implementation of Donald Knuth's Algorithm X to solve the Sudoku when modelled as an exact cover problem
 - `data`
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `comparison.ipynb`: Algorithm comparisons
