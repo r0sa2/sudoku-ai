@@ -11,7 +11,9 @@ algorithms to solve the classic 9x9 Sudoku.
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `comparison.ipynb`: Algorithm comparisons
 
-## NYTimes Sudoku Dataset
+## Datasets
+We compare algorithms in two settings.
+### NYTimes Sudoku Dataset
 NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape 
 the website to prepare a Sudoku dataset using the following Google Apps Script 
 code:
@@ -45,6 +47,7 @@ function update() {
   sheet.getRange('D' + rowIndex.toString()).setValue(hardGrid.join());
 }
 ```
+### Al Escargot ("The Most Difficult Sudoku Puzzle")
 
 ## Algorithms
 - **Simple Backtracking**: Simple backtracking is perhaps the simplest sudoku solving algorithm and serves as a baseline. It entails iterating over the sudoku grid and assigning valid values to unfilled cells (a value is considered valid if there is no other cell with the same value in the row/column/3x3 box of the given cell). In case assignments lead to an unfeasible scenario, the algorithm backtracks and attempts alternative assignments to the unfilled cells.
