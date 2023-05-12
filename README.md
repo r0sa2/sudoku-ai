@@ -47,6 +47,7 @@ function update() {
   sheet.getRange('D' + rowIndex.toString()).setValue(hardGrid.join());
 }
 ```
+The script is setup to automatically update a spreadsheet daily.
 ### Al Escargot ("The Most Difficult Sudoku Puzzle")
 
 ## Algorithms
