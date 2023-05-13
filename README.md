@@ -37,8 +37,8 @@ In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have 
 
 ## Comparisons
 ### NYTimes Sudoku Dataset
-<p align="center"><img width="400" height="300" src="assets/comparison_1.png"></p>
-<p align="center"><img width="400" height="300" src="assets/comparison_2.png"></p>
+<p align="center"><img width="600" height="300" src="assets/comparison_1.png"></p>
+<p align="center"><img width="600" height="300" src="assets/comparison_2.png"></p>
 <div align="center">
 <table>
     <tr>
