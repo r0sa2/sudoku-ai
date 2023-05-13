@@ -18,6 +18,7 @@ NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape th
 
 As of May 11th, 2023, the dataset contains 711 Sudokus for each difficulty, with the following unfilled cell count distributions.
 <p align="center"><img width="400" height="300" src="assets/uccd.png"></p>
+
 ### AI Escargot (*"The Most Difficult Sudoku Puzzle"*)
 In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have created the world's hardest Sudoku. In his words, *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
 <p align="center"><img width="300" height="300" src="assets/ai_escargot.png"></p>
