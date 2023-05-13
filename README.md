@@ -19,6 +19,7 @@ NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape th
 As of May 11th, 2023, the dataset contains 711 Sudokus for each difficulty, with the following unfilled cell count distributions.
 <p align="center"><img width="400" height="300" src="assets/uccd.png"></p>
 We observe that:
+
 - As expected, Medium and hard Sudokus have larger unfilled cell counts compared to easy Sudokus.
 - Interestingly, medium and hard Sudokus have similar unfilled cell counts. This suggests that the key factor separating medium from hard Sudokus is the arrangement of unfilled cells (as opposed to their count).
 
