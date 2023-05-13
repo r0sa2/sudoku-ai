@@ -37,6 +37,63 @@ In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have 
 
 ## Comparisons
 ### NYTimes Sudoku Dataset
+<p align="center"><img width="400" height="300" src="assets/comparison_1.png"></p>
+<p align="center"><img width="400" height="300" src="assets/comparison_2.png"></p>
+<div align="center">
+<table>
+    <tr>
+        <th>Difficulty</th>
+        <th>Algorithm</th>
+        <th>Average no. of guesses</th>
+    </tr>
+    <tr>
+        <td>Easy</td>
+        <td>Simple Backtracking</td>
+        <td>86.376</td>
+    </tr>
+    <tr>
+        <td>Easy</td>
+        <td>Constraint Satisfaction Problem</td>
+        <td>43.007</td>
+    </tr>
+    <tr>
+        <td>Easy</td>
+        <td>Algorithm X</td>
+        <td>43.000</td>
+    </tr>
+    <tr>
+        <td>Medium</td>
+        <td>Simple Backtracking</td>
+        <td>100910.762</td>
+    </tr>
+    <tr>
+        <td>Medium</td>
+        <td>Constraint Satisfaction Problem</td>
+        <td>151.082</td>
+    </tr>
+    <tr>
+        <td>Medium</td>
+        <td>Algorithm X</td>
+        <td>70.134</td>
+    </tr>
+    <tr>
+        <td>Hard</td>
+        <td>Simple Backtracking</td>
+        <td>149788.274</td>
+    </tr>
+    <tr>
+        <td>Hard</td>
+        <td>Constraint Satisfaction Problem</td>
+        <td>184.641</td>
+    </tr>
+    <tr>
+        <td>Hard</td>
+        <td>Algorithm X</td>
+        <td>90.930</td>
+    </tr>
+</table>
+</div>
+
 ### AI Escargot
 <div align="center">
 <table>
@@ -50,7 +107,7 @@ In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have 
     </tr>
     <tr>
         <td>Constraint Satisfaction Problem</td>
-        <td>344</td>
+        <td>414</td>
     </tr>
     <tr>
         <td>Algorithm X</td>
