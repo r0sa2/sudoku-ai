@@ -3,18 +3,18 @@ This repository is a growing collection of implementations and comparisons of al
 
 ## Directory Structure
 - `algorithms`
-    - `bt.py`: Implementation of a simple backtracking algorithm
-    - `csp.py`: Implementation of a backtracking algorithm to solve the Sudoku when modelled as a constraint satisfaction problem (CSP)
-    - `dlx.py`: Implementation of Donald Knuth's Algorithm X to solve the Sudoku when modelled as an exact cover problem
+    - `bt.py`: Simple backtracking
+    - `csp.py`: Constraint Satisfaction Problem (CSP)
+    - `dlx.py`: Dancing Links Algorithm X (DLX)
 - `data`
     - `scraping.gs`: Scraping code
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `comparison.ipynb`: Algorithm comparisons code
 
 ## Datasets
-We compare algorithms in two settings.
+The algorithms are compared in two settings.
 ### [NYTimes Sudoku Dataset](data/NYTimes_Sudoku_Dataset.csv)
-NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape the website to prepare a Sudoku dataset using a [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
+NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. The website is scraped to prepare a Sudoku dataset using [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
 
 As of May 11th, 2023, the dataset contains 711 Sudokus for each difficulty, with the following unfilled cell count distributions.
 <p align="center"><img width="400" height="300" src="assets/uccd.png"></p>
