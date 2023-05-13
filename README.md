@@ -92,6 +92,7 @@ In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have 
 </div>
 
 ### AI Escargot
+The following table shows the no. of guesses made by each algorithm. It can be seen that Al Escargot lives upto its name, with the no. of guesses for the CSP and DLX algorithms here signficantly in excess of the average no. of guesses for these two algorithms for the hard NYTimes Sudokus.
 <div align="center">
 <table>
     <tr>
