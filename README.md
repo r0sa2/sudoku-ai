@@ -1,6 +1,5 @@
 # Sudoku-AI
-This repository is a growing collection of implementations and comparisons of 
-algorithms to solve the classic 9x9 Sudoku.
+This repository is a growing collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
 
 ## Directory Structure
 - `algorithms`
@@ -8,48 +7,16 @@ algorithms to solve the classic 9x9 Sudoku.
     - `csp.py`: Implementation of a backtracking algorithm to solve the Sudoku when modelled as a constraint satisfaction problem (CSP)
     - `dlx.py`: Implementation of Donald Knuth's Algorithm X to solve the Sudoku when modelled as an exact cover problem
 - `data`
+    - `scraping.gs`: Scraping code
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `comparison.ipynb`: Algorithm comparisons
 
 ## Datasets
 We compare algorithms in two settings.
 ### NYTimes Sudoku Dataset
-NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape 
-the website to prepare a Sudoku dataset using the following Google Apps Script 
-code:
-```javascript
-function update() {
-  let html = UrlFetchApp.fetch('https://www.nytimes.com/puzzles/sudoku/easy').getContentText();
-
-  // Get and parse JSON string
-  let startIndex = html.match(/window\.gameData/).index;
-  let endIndex = html.match(/}}}/).index;
-  let data = html.substring(startIndex + 18, endIndex + 3);
-  let dataAsJSON = JSON.parse(data);
-
-  // Extract easy, medium and hard sudokus from object
-  let easyGrid = dataAsJSON.easy.puzzle_data.puzzle;
-  let mediumGrid = dataAsJSON.medium.puzzle_data.puzzle;
-  let hardGrid = dataAsJSON.hard.puzzle_data.puzzle;
-
-  let sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Dataset');
-
-  // Find next blank row
-  let rowIndex = 1;
-  while (!sheet.getRange('A' + rowIndex.toString()).isBlank()) {
-    rowIndex++;
-  }
-
-  // Add data to dataset
-  sheet.getRange('A' + rowIndex.toString()).setValue(Utilities.formatDate(new Date(), 'Asia/Calcutta', 'dd/MM/yy'));
-  sheet.getRange('B' + rowIndex.toString()).setValue(easyGrid.join());
-  sheet.getRange('C' + rowIndex.toString()).setValue(mediumGrid.join());
-  sheet.getRange('D' + rowIndex.toString()).setValue(hardGrid.join());
-}
-```
-The script is setup to automatically update a spreadsheet daily.
+NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape the website to prepare a Sudoku dataset using a [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
 ### AI Escargot (*"The Most Difficult Sudoku Puzzle"*)
-In late November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have created the world's hardest Sudoku. In his words, *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
+In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have created the world's hardest Sudoku. In his words, *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
 
 ## Algorithms
 - **Simple Backtracking**: Simple backtracking is perhaps the simplest sudoku solving algorithm and serves as a baseline. It entails iterating over the sudoku grid and assigning valid values to unfilled cells (a value is considered valid if there is no other cell with the same value in the row/column/3x3 box of the given cell). In case assignments lead to an unfeasible scenario, the algorithm backtracks and attempts alternative assignments to the unfilled cells.
