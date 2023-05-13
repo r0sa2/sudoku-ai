@@ -34,11 +34,11 @@ In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have 
 
 ## Comparisons
 ### NYTimes Sudoku Dataset
-The following figure shows distributions of the no. of guesses made by each algorithm. There is one plot for each difficulty level. Within each plot, separate plots are provided for each algorithm.
+The following figure shows the distributions of the no. of guesses made by each algorithm. There is one plot for each difficulty level. Within each plot, separate plots are provided for each algorithm.
 
 <p align="center"><img width="900" height="300" src="assets/comparison_1.png"></p>
 
-Given that the simple backtracking algorithm dominates the plots, the plots after excluding this algorithm are shown below.
+Given that the simple backtracking algorithm dominates the plots, the following figure shows the distributions after excluding this algorithm.
 
 <p align="center"><img width="900" height="300" src="assets/comparison_2.png"></p>
 
