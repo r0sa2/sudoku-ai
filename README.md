@@ -3,7 +3,7 @@ This repository is a growing collection of implementations and comparisons of al
 
 ## Directory Structure
 - `algorithms`
-    - `bt.py`: Simple backtracking
+    - `bt.py`: Simple backtracking (BT)
     - `csp.py`: Constraint Satisfaction Problem (CSP)
     - `dlx.py`: Dancing Links Algorithm X (DLX)
 - `data`
@@ -25,7 +25,7 @@ In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have 
 <p align="center"><img width="300" height="300" src="assets/ai_escargot.png"></p>
 
 ## Algorithms
-- [**Simple Backtracking**](algorithms/bt.py): Simple backtracking is perhaps the simplest sudoku solving algorithm and serves as a baseline. It entails iterating over the sudoku grid and assigning valid values to unfilled cells (a value is considered valid if there is no other cell with the same value in the row/column/3x3 box of the given cell). In case assignments lead to an unfeasible scenario, the algorithm backtracks and attempts alternative assignments to the unfilled cells.
+- [**Simple Backtracking (BT)**](algorithms/bt.py): Simple backtracking is perhaps the simplest sudoku solving algorithm and serves as a baseline. It entails iterating over the sudoku grid and assigning valid values to unfilled cells (a value is considered valid if there is no other cell with the same value in the row/column/3x3 box of the given cell). In case assignments lead to an unfeasible scenario, the algorithm backtracks and attempts alternative assignments to the unfilled cells.
 
 - [**Constraint Satisfaction Problem (CSP)**](algorithms/csp.py): Simple backtracking can be enhanced when modelling the sudoku as a [constraint satisfaction problem (CSP)](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem). Of particular significance is the *Maintaining Arc Consistency (MAC) algorithm*, which trims the set of possible values for other unfilled cells whenever an unfilled cell is assigned. Additionally, the algorithm can be made more efficient using the *minimum-remaining-values (MRV) heuristic* (assign the next value to the unfilled cell with the fewest possible values), the *degree heuristic* (assign the next value to the unfilled cell that is involved in the highest no. of constraints with other unfilled cells), and the *least-constraining-value heuristic* (assign the next value that yields the highest number of consistent values of neighboring cells) (see for reference Chapter 6 of Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial intelligence: a modern approach. 3rd ed. Upper Saddle River, NJ: Prentice Hall).
 
@@ -38,7 +38,7 @@ The following figure shows the distributions of the no. of guesses made by each 
 
 <p align="center"><img width="900" height="300" src="assets/comparison_1.png"></p>
 
-Given that the simple backtracking algorithm dominates the plots, the following figure shows the distributions after excluding this algorithm.
+Given that the BT algorithm dominates the plots, the following figure shows the distributions after excluding this algorithm.
 
 <p align="center"><img width="900" height="300" src="assets/comparison_2.png"></p>
 
@@ -54,54 +54,61 @@ Finally, the following table shows the average no. of guesses for each case.
     </tr>
     <tr>
         <td>Easy</td>
-        <td>Simple Backtracking</td>
+        <td>BT</td>
         <td>86.376</td>
     </tr>
     <tr>
         <td>Easy</td>
-        <td>Constraint Satisfaction Problem</td>
+        <td>CSP</td>
         <td>43.007</td>
     </tr>
     <tr>
         <td>Easy</td>
-        <td>Algorithm X</td>
+        <td>DLX</td>
         <td>43.000</td>
     </tr>
     <tr>
         <td>Medium</td>
-        <td>Simple Backtracking</td>
+        <td>BT</td>
         <td>100910.762</td>
     </tr>
     <tr>
         <td>Medium</td>
-        <td>Constraint Satisfaction Problem</td>
+        <td>CSP</td>
         <td>151.082</td>
     </tr>
     <tr>
         <td>Medium</td>
-        <td>Algorithm X</td>
+        <td>DLX</td>
         <td>70.134</td>
     </tr>
     <tr>
         <td>Hard</td>
-        <td>Simple Backtracking</td>
+        <td>BT</td>
         <td>149788.274</td>
     </tr>
     <tr>
         <td>Hard</td>
-        <td>Constraint Satisfaction Problem</td>
+        <td>CSP</td>
         <td>184.641</td>
     </tr>
     <tr>
         <td>Hard</td>
-        <td>Algorithm X</td>
+        <td>DLX</td>
         <td>90.930</td>
     </tr>
 </table>
 </div>
 
+It can be seen that:
+
+- The DLX algorithm outperforms the CSP algorithm, which in turn outperforms the BT algorithm.
+- Given that there are 43 unfilled cells for each easy Sudoku and the CSP and DLX algorithms are making ~ 43 guesses on average, these two algorithms are getting essentially all assignments right on first try.
+- The BT algorithm has comparable performance to the other two algorithms for easy Sudokus. However, unlike the other two algorithms, its performance scales very poorly when increasing the Sudoku difficulty level.
+
 ### AI Escargot
-The following table shows the no. of guesses made by each algorithm. It can be seen that Al Escargot lives upto its name, with the no. of guesses for the CSP and DLX algorithms here significantly in excess of the average no. of guesses for these two algorithms for the hard NYTimes Sudokus.
+The following table shows the no. of guesses made by each algorithm. 
+
 <div align="center">
 <table>
     <tr>
@@ -109,16 +116,18 @@ The following table shows the no. of guesses made by each algorithm. It can be s
         <th>No. of guesses</th>
     </tr>
     <tr>
-        <td>Simple Backtracking</td>
+        <td>BT</td>
         <td>8969</td>
     </tr>
     <tr>
-        <td>Constraint Satisfaction Problem</td>
+        <td>CSP</td>
         <td>414</td>
     </tr>
     <tr>
-        <td>Algorithm X</td>
+        <td>DLX</td>
         <td>145</td>
     </tr>
 </table>
 </div>
+
+It can be seen that Al Escargot lives upto its name, with the no. of guesses for the CSP and DLX algorithms here significantly in excess of the average no. of guesses for these two algorithms for the hard NYTimes Sudokus.
