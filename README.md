@@ -103,7 +103,7 @@ Finally, the following table shows the average no. of guesses for each case.
 It can be seen that:
 
 - The DLX algorithm outperforms the CSP algorithm, which in turn outperforms the BT algorithm.
-- Given that there are 43 unfilled cells for each easy Sudoku and the CSP and DLX algorithms are making ~ 43 guesses on average, these two algorithms are getting essentially all assignments right on first try.
+- Given that there are ~ 43 unfilled cells for each easy Sudoku and the CSP and DLX algorithms are making ~ 43 guesses on average, these two algorithms are getting essentially all assignments right on first try.
 - The BT algorithm has comparable performance to the other two algorithms for easy Sudokus. However, unlike the other two algorithms, its performance scales very poorly when increasing the Sudoku difficulty level.
 
 ### AI Escargot
