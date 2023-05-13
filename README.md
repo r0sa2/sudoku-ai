@@ -17,7 +17,7 @@ We compare algorithms in two settings.
 NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. We scrape the website to prepare a Sudoku dataset using a [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
 ### AI Escargot (*"The Most Difficult Sudoku Puzzle"*)
 In November 2006, a Finnish applied mathematician, Arto Inkala, claimed to have created the world's hardest Sudoku. In his words, *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
-<p align="center"><img width="200" height="200" src="assets/ai_escargot.png"></p>
+<p align="center"><img width="300" height="300" src="assets/ai_escargot.png"></p>
 
 ## Algorithms
 - [**Simple Backtracking**](algorithms/bt.py): Simple backtracking is perhaps the simplest sudoku solving algorithm and serves as a baseline. It entails iterating over the sudoku grid and assigning valid values to unfilled cells (a value is considered valid if there is no other cell with the same value in the row/column/3x3 box of the given cell). In case assignments lead to an unfeasible scenario, the algorithm backtracks and attempts alternative assignments to the unfilled cells.
