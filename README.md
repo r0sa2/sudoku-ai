@@ -44,6 +44,7 @@ Given that the simple backtracking algorithm dominates the plots, the plots afte
 
 Finally, the following table shows the average no. of guesses for each case.
 
+
 <div align="center">
 <table>
     <tr>
