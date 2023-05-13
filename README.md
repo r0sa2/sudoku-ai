@@ -21,7 +21,7 @@ As of May 11th, 2023, the dataset contains 711 Sudokus for each difficulty, with
 As expected, medium and hard Sudokus have larger unfilled cell counts compared to easy Sudokus. But interestingly, medium and hard Sudokus have similar unfilled cell counts. This suggests that the key factor separating medium from hard Sudokus is the arrangement of unfilled cells (as opposed to their count).
 
 ### AI Escargot (*"The Most Difficult Sudoku Puzzle"*)
-In November 2006, Arto Inkala, a Finnish applied mathematician claimed to have created the world's hardest Sudoku. He said *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
+In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have created the world's hardest Sudoku. He said *"I called the puzzle AI Escargot, because it looks like a snail. Solving it is like an intellectual culinary pleasure. AI are my initials"*, and *"Escargot demands those tackling it to consider eight casual relationships simultaneously, while the most complicated variants attempted by the public require people to think of only one or two combinations at any one time"*.
 <p align="center"><img width="300" height="300" src="assets/ai_escargot.png"></p>
 
 ## Algorithms
