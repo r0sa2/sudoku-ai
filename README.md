@@ -1,18 +1,19 @@
 # Sudoku-AI
-This repository is a growing collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
+This repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
 
 ## Directory Structure
 - `algorithms`
     - `bt.py`: Simple backtracking (BT)
     - `csp.py`: Constraint Satisfaction Problem (CSP)
     - `dlx.py`: Dancing Links Algorithm X (DLX)
+    - `lp.py`: Linear Program (LP)
 - `data`
     - `scraping.gs`: Scraping code
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `comparison.ipynb`: Algorithm comparisons code
 
 ## Datasets
-The algorithms are compared in two settings.
+The algorithms (BT, CSP, DLX) are compared in two settings.
 ### [NYTimes Sudoku Dataset](data/NYTimes_Sudoku_Dataset.csv)
 NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. The website is scraped to prepare a Sudoku dataset using [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
 
@@ -30,6 +31,8 @@ In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have 
 - [**Constraint Satisfaction Problem (CSP)**](algorithms/csp.py): Simple backtracking can be enhanced when modelling the sudoku as a [constraint satisfaction problem (CSP)](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem). Of particular significance is the *Maintaining Arc Consistency (MAC) algorithm*, which trims the set of possible values for other unfilled cells whenever an unfilled cell is assigned. Additionally, the algorithm can be made more efficient using the *minimum-remaining-values (MRV) heuristic* (assign the next value to the unfilled cell with the fewest possible values), the *degree heuristic* (assign the next value to the unfilled cell that is involved in the highest no. of constraints with other unfilled cells), and the *least-constraining-value heuristic* (assign the next value that yields the highest number of consistent values of neighboring cells) (see for reference Chapter 6 of Russell, S. J., Norvig, P., & Davis, E. (2010). Artificial intelligence: a modern approach. 3rd ed. Upper Saddle River, NJ: Prentice Hall).
 
 - [**Algorithm X (DLX)**](algorithms/dlx.py): The Sudoku can be modelled as an [exact cover problem](https://en.wikipedia.org/wiki/Exact_cover), which lends itself to solving using the [dancing links](https://en.wikipedia.org/wiki/Dancing_Links) implementation of [Donald Knuth's Algorithm X](https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X) (see for reference [here](https://arxiv.org/pdf/cs/0011047.pdf)).
+
+- [**Linear Program**](algorithms/dlx.py): The Sudoku can be modelled as a [linear program](https://en.wikipedia.org/wiki/Linear_programming), which lends itself to solving using the Python [PuLP package](https://coin-or.github.io/pulp/CaseStudies/a_sudoku_problem.html).
 
 
 ## Comparisons
