@@ -15,7 +15,7 @@ class SudokuLP:
         """
         # List of 3x3 boxes, with each sublist containing the (row, col)
         # indices of each cell in the respective box
-        self.boxes: list[list[int]] = [
+        self.boxes: list[list[tuple[int, int]]] = [
             [(3 * rb + r, 3 * rc + c) for r in range(3) for c in range(3)]
             for rb in range(3)
             for rc in range(3)
