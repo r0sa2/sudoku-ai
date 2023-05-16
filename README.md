@@ -7,6 +7,7 @@ This repository is a collection of implementations and comparisons of algorithms
     - `csp.py`: Constraint Satisfaction Problem (CSP)
     - `dlx.py`: Dancing Links Algorithm X (DLX)
     - `lp.py`: Linear Program (LP)
+    - `sat.py`: Boolean Satisfiability Problem (SAT)
 - `data`
     - `scraping.gs`: Scraping code
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
@@ -32,7 +33,9 @@ In November 2006, Arto Inkala, a Finnish applied mathematician, claimed to have 
 
 - [**Algorithm X (DLX)**](algorithms/dlx.py): The Sudoku can be modelled as an [exact cover problem](https://en.wikipedia.org/wiki/Exact_cover), which lends itself to solving using the [dancing links](https://en.wikipedia.org/wiki/Dancing_Links) implementation of [Donald Knuth's Algorithm X](https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X) (see for reference [here](https://arxiv.org/pdf/cs/0011047.pdf)).
 
-- [**Linear Program**](algorithms/lp.py): The Sudoku can be modelled as a [linear program](https://en.wikipedia.org/wiki/Linear_programming), which lends itself to solving using the Python [PuLP package](https://coin-or.github.io/pulp/CaseStudies/a_sudoku_problem.html).
+- [**Linear Program (LP)**](algorithms/lp.py): The Sudoku can be modelled as a [linear program](https://en.wikipedia.org/wiki/Linear_programming), which lends itself to solving using the Python [PuLP package](https://coin-or.github.io/pulp/CaseStudies/a_sudoku_problem.html).
+
+- [**Boolean Satisfiability Problem (SAT)**](algorithms/sat.py): The Sudoku can be modelled as a [boolean satisfiability problem](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem), which lends itself to solving using the Python [pycosat package](https://github.com/conda/pycosat/blob/main/examples/sudoku.py) (see for reference [here](https://www.lri.fr/~conchon/mpri/weber.pdf)).
 
 
 ## Comparisons
