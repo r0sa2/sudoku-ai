@@ -38,14 +38,14 @@ class SudokuDLX:
         """
         self.guesses: int = 0  # No. of guesses made by the algorithm
         self.assigned_count: int = 0  # No. of assigned cells
-        self.O: Optional[Node] = [None for i in range(81)]  # Solution
+        self.O: list[Optional[Node]] = [None for i in range(81)]  # Solution
         self.root: Node = Node()
         self.network_height: int = 730
         self.network_width: int = 324
 
         # Nodes in the network other than the root node. First row contains
         # the header nodes and all remaining rows contain non-header nodes
-        self.network: Optional[Node] = [
+        self.network: list[list[Optional[Node]]] = [
             [None for c in range(self.network_width)]
             for r in range(self.network_height)
         ]

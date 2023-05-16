@@ -4,7 +4,8 @@ from pulp import LpProblem, LpVariable, lpSum, PULP_CBC_CMD, value
 class SudokuLP:
     """
     Implementation of a solver for a 9x9 Sudoku when modelled as a linear
-    program. See for reference https://coin-or.github.io/pulp/CaseStudies/a_sudoku_problem.html.
+    program. It is assumed that a solution exists and is unique. See for
+    reference https://coin-or.github.io/pulp/CaseStudies/a_sudoku_problem.html.
     """
 
     def __init__(self, grid: list[list[int]]) -> None:

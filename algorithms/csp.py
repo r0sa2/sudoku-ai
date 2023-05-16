@@ -1,6 +1,7 @@
 from __future__ import annotations
 from collections import deque
 from functools import cmp_to_key
+from typing import Optional
 
 
 class DV:
@@ -68,18 +69,17 @@ class SudokuCSP:
             indicate unfilled cells
         """
         self.guesses: int = 0  # No. of guesses made by the algorithm
-        self.grid: list[list[DV]] = [
-            [None for c in range(9)] for r in range(9)
-        ]  # Grid of DVs
-        self.unassigned_DVs: list[DV] = []
 
-        # Add DVs to the grid
+        self.grid: list[list[DV]] = []
+        self.unassigned_DVs: list[DV] = []
         for r in range(9):
+            self.grid.append([])
+
             for c in range(9):
                 if grid[r][c] != 0:  # Cell is assigned
-                    self.grid[r][c] = DV(r, c, {grid[r][c]})
+                    self.grid[-1].append(DV(r, c, {grid[r][c]}))
                 else:  # Cell is unassigned
-                    self.grid[r][c] = DV(r, c, {i + 1 for i in range(9)})
+                    self.grid[-1].append(DV(r, c, {i + 1 for i in range(9)}))
                     self.unassigned_DVs.append(self.grid[r][c])
 
         # Assign neighbors to the DVs
@@ -112,7 +112,7 @@ class SudokuCSP:
                     queue.append((self.grid[r][c], neighbor))
         self._ac3(queue)
 
-    def _ac3(self, queue: deque[tuple[DV, DV]]) -> list[tuple[DV, int]] | int:
+    def _ac3(self, queue: deque[tuple[DV, DV]]) -> Optional[list[tuple[DV, int]]]:
         """
         Implementation of the arc-consistency (AC-3) algorithm.
 
@@ -120,8 +120,8 @@ class SudokuCSP:
             queue (deque[tuple[DV, DV]]): Queue of arcs
 
         Returns:
-            list[tuple[DV, int]] | int: Returns list of inferences if no
-            inconsistency is found or -1 otherwise. An inference is a tuple
+            Optional[list[tuple[DV, int]]]: Returns list of inferences if no
+            inconsistency is found or None otherwise. An inference is a tuple
             with first element containing a DV and second element containing the
             value removed from the DV's domain.
         """
@@ -135,24 +135,24 @@ class SudokuCSP:
             # contains xj's value
             if len(xj.domain) == 1 and xj_value in xi.domain:
                 xi.domain.remove(xj_value)
-                inferences.append([xi, xj_value])
+                inferences.append((xi, xj_value))
 
                 # Inconsistency if xi has an empty domain. Remove inferences
-                # and return -1
+                # and return None
                 if len(xi.domain) == 0:
                     for inference in inferences:
                         inference[0].domain.add(inference[1])
-                    return -1
+                    return None
 
                 for xk in xi.neighbors:
                     if xk != xj:
-                        queue.append([xk, xi])
+                        queue.append((xk, xi))
 
         self.unassigned_DVs.sort(key=cmp_to_key(DV.cmp))
 
         return inferences
 
-    def _mac(self, dv: DV) -> list[tuple[DV, int]] | int:
+    def _mac(self, dv: DV) -> Optional[list[tuple[DV, int]]]:
         """
         Implementation of the maintaining arc consistency (MAC) algorithm.
 
@@ -160,7 +160,7 @@ class SudokuCSP:
             dv (DV): DV whose value has been assigned
 
         Returns:
-            list[tuple[DV, int]] | int: Output of _ac3()
+            Optional[list[tuple[DV, int]]]: Output of _ac3()
         """
         return self._ac3(
             deque(
@@ -203,11 +203,9 @@ class SudokuCSP:
             # Guess DV's value
             dv.domain = set([value])
 
-            inferences = self._mac(dv)
-
-            if inferences != -1:  # No inconsistency found
+            inferences: Optional[list[tuple[DV, int]]] = self._mac(dv)
+            if isinstance(inferences, list):  # No inconsistency found
                 result = self._backtrack()
-
                 if result:  # Sudoku is solved
                     return result
 
