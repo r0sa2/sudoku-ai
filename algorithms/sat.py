@@ -45,7 +45,7 @@ class SudokuSAT:
                         [(r + i % 3, c + i // 3) for i in range(9)]
                     )
                 )
-        # Create clauses to acount for given values
+        # Create clauses to account for given values
         for r in range(1, 10):
             for c in range(1, 10):
                 if grid[r - 1][c - 1] != 0:
