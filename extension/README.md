@@ -1,5 +1,4 @@
 # NYTimes Sudoku Extension
-## About
 An extension to solve the NYTimes Sudoku. When the extension icon is clicked, a popup displays a replica of the Sudoku grid.
 
 <p align="center">
