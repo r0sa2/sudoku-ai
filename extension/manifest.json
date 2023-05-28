@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "NYTimes Sudoku Solver",
+  "version": "1.0",
+  "description": "Solves the NYTimes Sudoku",
+  "icons": {
+		"1080": "./assets/logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.nytimes.com/puzzles/sudoku/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "./popup/popup.html",
+    "default_title": "NYTimes Sudoku Solver"
+  }
+}

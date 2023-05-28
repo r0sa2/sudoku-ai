@@ -2,16 +2,17 @@
 This repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
 
 ## Directory Structure
+- `data`
+    - `scraping.gs`: Scraping scipt
+    - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `algorithms`
     - `bt.py`: Simple backtracking (BT)
     - `csp.py`: Constraint Satisfaction Problem (CSP)
     - `dlx.py`: Dancing Links Algorithm X (DLX)
     - `lp.py`: Linear Program (LP)
     - `sat.py`: Boolean Satisfiability Problem (SAT)
-- `data`
-    - `scraping.gs`: Scraping code
-    - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
-- `comparison.ipynb`: Algorithm comparisons code
+- `comparison.ipynb`: Algorithm comparisons notebook
+- `extension`: NYTimes Sudoku Chrome extension
 
 ## Datasets
 The algorithms (BT, CSP, DLX) are compared in two settings.
@@ -19,7 +20,7 @@ The algorithms (BT, CSP, DLX) are compared in two settings.
 NYTimes publishes easy, medium, and hard classic 9x9 Sudokus daily. The website is scraped to prepare a Sudoku dataset using [Google Apps Script](data/scraping.gs). The script is setup to automatically update a Google Sheet daily.
 
 As of May 11th, 2023, the dataset contains 711 Sudokus for each difficulty, with the following unfilled cell count distributions.
-<p align="center"><img width="400" height="300" src="assets/uccd.png"></p>
+<p align="center"><img width="400" height="300" src="assets/comparison_uccd.png"></p>
 As expected, medium and hard Sudokus have larger unfilled cell counts compared to easy Sudokus. But interestingly, medium and hard Sudokus have similar unfilled cell counts. This suggests that the key factor separating medium from hard Sudokus is the arrangement of unfilled cells (as opposed to their count).
 
 ### AI Escargot (*"The Most Difficult Sudoku Puzzle"*)

@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.switch {
+  width: 120px;
+  height: 34px;
+  margin: auto;
+  top: 5px;
+  display: block;
+  position: relative;
+}
+
+.switch input { 
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  position: absolute;
+  content: "";
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 2px black;
+}
+
+input:checked + .slider:before {
+  transform: translateX(86px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.grid {
+  width: 485px;
+  height: 485px;
+  border: 5px solid black;
+  margin: 10px;
+  position: relative;
+  background: #959595;
+}
+
+.cell {
+  width: 51px;
+  height: 51px;
+  outline: 1px solid #959595;
+  position: absolute;
+  background: #ffffff;
+}
+
+.cell.prefilled {
+  background: #e6e6e6;
+}
