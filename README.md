@@ -1,5 +1,5 @@
 # Sudoku-AI
-This repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
+This repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku. It also contains a lightweight Chrome extension to solve the NYTimes Sudoku.
 
 ## Directory Structure
 - `data`
