@@ -3,7 +3,7 @@ This repository is a collection of implementations and comparisons of algorithms
 
 ## Directory Structure
 - `data`
-    - `scraping.gs`: Scraping scipt
+    - `scraping.gs`: Scraping script
     - `NYTimes_Sudoku_Dataset.csv`: Scraped NYTimes Sudoku dataset
 - `algorithms`
     - `bt.py`: Simple backtracking (BT)
