@@ -1,5 +1,5 @@
-# NYTimes Sudoku Extension
-An extension to solve the NYTimes Sudoku. When the extension icon is clicked, a popup displays a replica of the Sudoku grid.
+# NYTimes Sudoku Chrome Extension
+A Chrome extension to solve the NYTimes Sudoku. When the extension icon is clicked, a popup displays a replica of the Sudoku grid.
 
 <p align="center">
     <img src="../assets/extension_unsolved.png" alt="Unsolved Grid" width="80%"/>
