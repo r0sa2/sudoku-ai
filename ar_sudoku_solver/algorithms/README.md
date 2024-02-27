@@ -1,5 +1,5 @@
-# Sudoku-AI
-This repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
+# Sudoku Algorithms
+This sub-repository is a collection of implementations and comparisons of algorithms to solve the classic 9x9 Sudoku.
 
 ## Directory Structure
 - `data`

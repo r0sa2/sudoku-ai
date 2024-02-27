@@ -1,6 +1,6 @@
-# Augmented Reality Sudoku Solver
+# Sudoku AI
 
-Implementation of an augmented reality (AR) Sudoku solver for images and video.
+This repository contains the implementation of an augmented reality (AR) Sudoku solver for images and video, and the implementation and comparison of different algorithms to solve the classic 9x9 Sudoku.
 
 ## Directory Structure
 - `run.py`: Running script for the AR Sudoku solver for real-time video
