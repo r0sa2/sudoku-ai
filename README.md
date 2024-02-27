@@ -25,7 +25,7 @@ This repository contains the implementation of an augmented reality (AR) Sudoku 
 ## Usage
 The code has been written to work with Python3.11.6. Assuming a virtual environment is being used, begin by installing requirements.
 ```
-> pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 For real-time video solving with webcam input (with device index `n`), run
 ```
